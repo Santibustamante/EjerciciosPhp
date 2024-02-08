@@ -1,5 +1,5 @@
 <?php
-
+    $texto = $_POST['texto'];
     $directorio = $_POST['directorio'];
     $fichero = $_FILES['fichero'];
 
@@ -9,6 +9,6 @@
 
     move_uploaded_file($fichero['tmp_name'], "$directorio/mifichero.txt");
 
-    file_put_contents("$directorio/mifichero.txt","hola",FILE_APPEND);
+    file_put_contents("$directorio/mifichero.txt",$texto,FILE_APPEND);
 
     echo '<h1>Fichero creado con exito<h1/>';
